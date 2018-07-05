@@ -1,8 +1,9 @@
-const checkAuth = cb => {
+const getAuth = cb => {
   setTimeout(() => {
     cb({ isAuth: true });
   }, 2000);
 };
+
 const getUser = (authInfo, cb) => {
   if (!authInfo.isAuth) {
     cb(null);
@@ -13,7 +14,7 @@ const getUser = (authInfo, cb) => {
   }, 2000);
 };
 
-checkAuth(authInfo => {
+getAuth(authInfo => {
   getUser(authInfo, user => {
     console.log(user.name);
   });

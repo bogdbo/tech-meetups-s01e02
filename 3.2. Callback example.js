@@ -1,8 +1,5 @@
 // ugly AF
 const https = require('https');
-var readOnly =
-  'BQAuA43U9xfQhStl0jyJavC4fdxbYLhAG7b2UY5RnONyZt2PMn1aLA1vixBB32PGwaKV3SKJT3aUpcdGtvOivlXLdW4vPUbhFUeKqbft6VYDw3sJBlzgf4lswdS1DlQCuNpYQ_W2tVoRzWk1RX96';
-
 let buffer = '';
 
 handleRequest = res => {

@@ -1,7 +1,5 @@
 function getUser(callback) {
-  setTimeout(function() {
-    callback('bogdan');
-  }, 1000);
+  setTimeout(() => callback('Hello world'), 1000);
 }
 
 getUser(function(user) {
