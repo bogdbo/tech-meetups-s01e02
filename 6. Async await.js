@@ -1,18 +1,19 @@
-const getAuth = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({ isAuth: true });
-    }, 1000);
-  });
+function timeout(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const getAuth = async () => {
+  await timeout(1000);
+  return { isAuth: true };
 };
-const getUser = authInfo => {
-  return new Promise((resolve, reject) => {
-    if (!authInfo.isAuth) {
-      reject();
-    } else {
-      setTimeout(() => resolve({ name: 'Max' }), 1000);
-    }
-  });
+
+const getUser = async authInfo => {
+  await timeout(1000);
+  if (!authInfo.isAuth) {
+    throw 'unauthenticated';
+  } else {
+    return { name: 'Max' };
+  }
 };
 
 const main = async () => {

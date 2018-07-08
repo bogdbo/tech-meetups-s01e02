@@ -1,2 +1,9 @@
+function logWorld() {
+  var a = 1;
+  console.log('World');
+  var b = 2;
+}
+
 console.log('Hello');
-console.log('World');
+logWorld();
+console.log('DONE');

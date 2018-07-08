@@ -1,8 +1,8 @@
 function getUser(callback) {
-  setTimeout(() => callback('Hello world'), 1000);
+  setTimeout(() => callback('Bogdan'), 1000);
 }
 
-getUser(function(user) {
+getUser(user => {
   console.log(user);
   console.log('after');
 });

@@ -1,7 +1,7 @@
 const getAuth = cb => {
   setTimeout(() => {
     cb({ isAuth: true });
-  }, 2000);
+  }, 1000);
 };
 
 const getUser = (authInfo, cb) => {
@@ -11,7 +11,7 @@ const getUser = (authInfo, cb) => {
   }
   setTimeout(() => {
     cb({ name: 'Max' });
-  }, 2000);
+  }, 1000);
 };
 
 getAuth(authInfo => {

@@ -1,23 +1,21 @@
 // ugly AF
 const https = require('https');
-let buffer = '';
 
+let buffer = '';
+handleData = data => (buffer += data);
+handleEnd = () => console.log(buffer);
 handleRequest = res => {
-  res.on('data', data => (buffer += data));
-  res.on('end', () => console.log(buffer));
+  res.on('data', handleData);
+  res.on('end', handleEnd);
 };
 
-https.get(
-  {
-    host: 'www.random.org',
-    path:
-      '/strings/?num=10&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new',
-    headers: {
-      Authorization: `Bearer ${readOnly}`
-    }
-  },
-  handleRequest
-);
+const requestDetails = {
+  host: 'www.random.org',
+  path:
+    '/strings/?num=10&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new'
+};
+
+https.get(requestDetails, handleRequest);
 
 let i = 0;
 nextNumber = () => {
@@ -25,7 +23,7 @@ nextNumber = () => {
     setTimeout(() => {
       console.log(i++);
       nextNumber();
-    }, 250);
+    }, 100);
   }
 };
 

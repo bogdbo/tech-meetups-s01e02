@@ -1,8 +1,9 @@
 const getCurrentSecond = () => new Date().getSeconds();
+
 const startSecond = getCurrentSecond();
 
 setTimeout(() => {
-  console.log('Ran after ' + (getCurrentSecond() - startSecond) + ' seconds');
+  console.log(`Ran after ${getCurrentSecond() - startSecond} seconds`);
 }, 1000);
 
 while (true) {
